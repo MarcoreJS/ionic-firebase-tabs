@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +9,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  // categories: Observable<any>;
 
+  constructor(
+    public navCtrl: NavController,
+    private firestore: AngularFirestore
+  ) {
+    // this.categories = this.firestore.collection<any>('categories').valueChanges();
   }
 
 }
